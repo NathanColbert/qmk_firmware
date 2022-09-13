@@ -70,7 +70,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // Start used rows
     KC_NO,           KC_NO,           KC_L,                   KC_U,               KC_Y,                   KC_NO,      KC_NO, KC_NO,   KC_NO, KC_W,               KC_F,                   KC_P,                KC_NO,  KC_NO,        
     KC_NO,           KC_NO,           MT(MOD_RGUI, KC_N),     MT(MOD_RALT, KC_E), MT(MOD_RCTL, KC_I),     KC_NO,      KC_NO, KC_NO,   KC_NO, MT(MOD_LCTL, KC_R), MT(MOD_LALT, KC_S),     MT(MOD_LGUI, KC_T),  KC_NO,  KC_NO,        
-    OSM(MOD_RSFT),   KC_SPACE,        KC_H,                   COMMAQ,             DOTX,                   KC_O,                       KC_A,  KC_X,               KC_C,                   KC_D,                MEH_T(TO(1)), OSL(2),        
+    KC_BSPACE,   MEH_T(KC_SPACE),        KC_H,                   COMMAQ,             DOTX,                   KC_O,                       KC_A,  KC_X,               KC_C,                   KC_D,                OSL(1), OSM(MOD_LSFT),        
     // Thumb cluster
     KC_NO,           KC_NO,           KC_NO,                  KC_NO,              KC_NO,                  KC_NO,                      KC_NO, KC_NO,              KC_NO,                  KC_NO,               KC_NO,  KC_NO,
     KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO        
@@ -78,9 +78,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [1] = LAYOUT_moonlander(
     KC_NO, KC_NO, KC_NO,  KC_NO, KC_NO, KC_NO,KC_NO, KC_NO,KC_NO,KC_NO,KC_NO, KC_NO, KC_NO, KC_NO,
     // Start used rows
-    KC_NO,       KC_NO,          KC_MAC_PASTE,  KC_MAC_COPY,   Z_0,      KC_NO,      KC_NO,  KC_NO,  KC_NO,      SLASHES,    PARENS,     QUOTES,      KC_NO,   KC_NO, 
-    KC_NO,       KC_NO,          M_0,           KC_UP,         J_0,      KC_NO,      KC_NO,  KC_NO,  KC_NO,      V_0,        B_0,        G_0,         KC_NO,   KC_NO, 
-    OSM(MOD_RGUI),KC_BSPACE,     KC_LEFT,       KC_DOWN,       KC_RIGHT, Q_0,                        K_0,       KC_EQUAL,    UNDERDASH,  COLON_SEMI,  TO(0),   KC_ESC, 
+    KC_NO,       KC_NO,          KC_NO,       KC_NO,      KC_NO,      KC_NO,      KC_NO,  KC_NO,  KC_NO,      SLASHES,    PARENS,     QUOTES,      KC_NO,   KC_NO, 
+    KC_NO,       KC_NO,          M_0,           Z_0,         J_0,      KC_NO,      KC_NO,  KC_NO,  KC_NO,      V_0,        B_0,        G_0,         KC_NO,   KC_NO, 
+    KC_NO,       KC_NO,         KC_NO,       KC_NO,       KC_NO,        Q_0,                        K_0,       KC_EQUAL,    UNDERDASH,  COLON_SEMI,  TO(0),   KC_ESC, 
     // Thumb cluster
     KC_NO,       KC_NO,          KC_NO,         KC_NO,         KC_NO,    KC_NO,                      KC_NO,      KC_NO,      KC_NO,      KC_NO,       KC_NO,   KC_NO,
     KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,KC_NO
@@ -93,6 +93,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     OSM(MOD_RGUI),  OSM(MOD_RSFT),  KC_7,   KC_8,   KC_9,   KC_0,                   ZEN_0,      OCCURENCES_0, KC_NO,        FIND_REP_0, TO(0),          KC_NO, 
     // Thumb cluster
     KC_NO,          KC_NO,          KC_NO,  KC_NO,  KC_NO,  KC_NO,                  KC_NO,      KC_NO,        KC_NO,        KC_NO,      KC_NO,          KC_NO,
+    KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,KC_NO
+  ),
+  [3] = LAYOUT_moonlander(
+    KC_NO, KC_NO, KC_NO,  KC_NO, KC_NO, KC_NO,KC_NO, KC_NO,KC_NO,KC_NO,KC_NO, KC_NO, KC_NO, KC_NO,
+    // Start used rows
+    KC_NO,          KC_NO,         KC_MAC_PASTE,  KC_UP,    KC_MAC_COPY,  KC_NO,    KC_NO,  KC_NO,  KC_NO,      KC_NO,    KC_NO,      KC_NO,       KC_NO,   KC_NO, 
+    KC_NO,          KC_NO,         KC_LEFT,       KC_DOWN,  KC_RIGHT,     KC_NO,    KC_NO,  KC_NO,  KC_NO,      KC_NO,    KC_LCTL,    KC_LALT,       KC_LGUI,   KC_NO, 
+    OSM(MOD_RGUI),  KC_BSPACE, KC_NO,         KC_NO,    KC_NO,        KC_NO,                    KC_NO,      KC_NO,    KC_NO,      KC_NO,       OSM(MOD_LALT),   KC_NO, 
+    // Thumb cluster
+    KC_NO,       KC_NO,          KC_NO,         KC_NO,         KC_NO,    KC_NO,                      KC_NO,      KC_NO,      KC_NO,      KC_NO,       KC_NO,   KC_NO,
     KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,KC_NO
   ),
 };
