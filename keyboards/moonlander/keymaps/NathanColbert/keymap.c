@@ -40,6 +40,7 @@ enum custom_keycodes {
   ONELESS,
   TWOMORE,
   ABSPACE_0,
+  PIPET,
   G_0,
   B_0,
   V_0,
@@ -70,7 +71,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // Start used rows
     KC_NO,           KC_NO,           KC_L,                   KC_U,               KC_Y,                   KC_NO,      KC_NO, KC_NO,   KC_NO, KC_W,               KC_F,                   KC_P,                KC_NO,  KC_NO,        
     KC_NO,           KC_NO,           MT(MOD_RGUI, KC_N),     MT(MOD_RALT, KC_E), MT(MOD_RCTL, KC_I),     KC_NO,      KC_NO, KC_NO,   KC_NO, MT(MOD_LCTL, KC_R), MT(MOD_LALT, KC_S),     MT(MOD_LGUI, KC_T),  KC_NO,  KC_NO,        
-    KC_BSPACE,   MEH_T(KC_SPACE),        KC_H,                   COMMAQ,             DOTX,                   KC_O,                       KC_A,  KC_X,               KC_C,                   KC_D,                OSL(1), OSM(MOD_LSFT),        
+    OSM(MOD_RSFT),   MEH_T(KC_SPACE), KC_H,                   COMMAQ,             DOTX,                   KC_O,                       KC_A,  KC_X,               KC_C,                   KC_D,                OSL(1), OSM(MOD_LSFT),        
     // Thumb cluster
     KC_NO,           KC_NO,           KC_NO,                  KC_NO,              KC_NO,                  KC_NO,                      KC_NO, KC_NO,              KC_NO,                  KC_NO,               KC_NO,  KC_NO,
     KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO        
@@ -78,9 +79,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [1] = LAYOUT_moonlander(
     KC_NO, KC_NO, KC_NO,  KC_NO, KC_NO, KC_NO,KC_NO, KC_NO,KC_NO,KC_NO,KC_NO, KC_NO, KC_NO, KC_NO,
     // Start used rows
-    KC_NO,       KC_NO,          KC_NO,       KC_NO,      KC_NO,      KC_NO,      KC_NO,  KC_NO,  KC_NO,      SLASHES,    PARENS,     QUOTES,      KC_NO,   KC_NO, 
-    KC_NO,       KC_NO,          M_0,           Z_0,         J_0,      KC_NO,      KC_NO,  KC_NO,  KC_NO,      V_0,        B_0,        G_0,         KC_NO,   KC_NO, 
-    KC_NO,       KC_NO,         KC_NO,       KC_NO,       KC_NO,        Q_0,                        K_0,       KC_EQUAL,    UNDERDASH,  COLON_SEMI,  TO(0),   KC_ESC, 
+    KC_NO,       KC_NO,          LSFT(KC_3), LSFT(KC_2),  PIPET,      KC_NO,      KC_NO,  KC_NO,  KC_NO,      SLASHES,    PARENS,     QUOTES,      KC_NO,   KC_NO, 
+    KC_NO,       KC_NO,          M_0,         KC_BSPACE,  J_0,        KC_NO,      KC_NO,  KC_NO,  KC_NO,      V_0,        B_0,        G_0,         KC_NO,   KC_NO, 
+    KC_NO,       KC_NO,          KC_LEFT,     KC_RIGHT,   Z_0,        Q_0,                        K_0,       KC_EQUAL,    UNDERDASH,  COLON_SEMI,  TO(0),   KC_ESC, 
     // Thumb cluster
     KC_NO,       KC_NO,          KC_NO,         KC_NO,         KC_NO,    KC_NO,                      KC_NO,      KC_NO,      KC_NO,      KC_NO,       KC_NO,   KC_NO,
     KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,KC_NO
@@ -90,7 +91,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // Start used rows
     KC_NO,          KC_NO,          KC_1,   KC_2,   KC_3,   KC_NO,  KC_NO,  KC_NO,  KC_NO,      KC_NO,        DEF_TO_SIDE,  CMD_P_0,    KC_NO,          KC_NO, 
     KC_NO,          KC_NO,          KC_4,   KC_5,   KC_6,   KC_NO,  KC_NO,  KC_NO,  KC_NO,      KC_NO,        KC_NO,        TERMINAL_0, KC_NO,          KC_NO, 
-    OSM(MOD_RGUI),  OSM(MOD_RSFT),  KC_7,   KC_8,   KC_9,   KC_0,                   ZEN_0,      OCCURENCES_0, KC_NO,        FIND_REP_0, TO(0),          KC_NO, 
+    OSM(MOD_RGUI),  OSM(MOD_RSFT),  KC_7,   KC_8,   KC_9,   KC_0,                   ZEN_0,      OCCURENCES_0, KC_NO,        FIND_REP_0, KC_NO,          KC_NO, 
     // Thumb cluster
     KC_NO,          KC_NO,          KC_NO,  KC_NO,  KC_NO,  KC_NO,                  KC_NO,      KC_NO,        KC_NO,        KC_NO,      KC_NO,          KC_NO,
     KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,KC_NO
@@ -99,10 +100,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_NO, KC_NO, KC_NO,  KC_NO, KC_NO, KC_NO,KC_NO, KC_NO,KC_NO,KC_NO,KC_NO, KC_NO, KC_NO, KC_NO,
     // Start used rows
     KC_NO,          KC_NO,         KC_MAC_PASTE,  KC_UP,    KC_MAC_COPY,  KC_NO,    KC_NO,  KC_NO,  KC_NO,      KC_NO,    KC_NO,      KC_NO,       KC_NO,   KC_NO, 
-    KC_NO,          KC_NO,         KC_LEFT,       KC_DOWN,  KC_RIGHT,     KC_NO,    KC_NO,  KC_NO,  KC_NO,      KC_NO,    KC_LCTL,    KC_LALT,       KC_LGUI,   KC_NO, 
-    OSM(MOD_RGUI),  KC_BSPACE, KC_NO,         KC_NO,    KC_NO,        KC_NO,                    KC_NO,      KC_NO,    KC_NO,      KC_NO,       OSM(MOD_LALT),   KC_NO, 
+    KC_NO,          KC_NO,         KC_LEFT,       KC_DOWN,  KC_RIGHT,     KC_NO,    KC_NO,  KC_NO,  KC_NO,      KC_LCTL,    KC_LALT,  KC_LSFT,     KC_NO,    KC_NO, 
+    OSM(MOD_RGUI),  KC_BSPACE,     RSFT(KC_TAB),  KC_BTN1,  KC_TAB,        KC_NO,                    KC_NO,      KC_NO,    KC_NO,      KC_NO,      OSM(MOD_LALT),   KC_NO, 
     // Thumb cluster
-    KC_NO,       KC_NO,          KC_NO,         KC_NO,         KC_NO,    KC_NO,                      KC_NO,      KC_NO,      KC_NO,      KC_NO,       KC_NO,   KC_NO,
+    KC_NO,       KC_NO,          KC_NO,         KC_NO,         KC_NO,    KC_NO,                      KC_NO,      KC_NO,      KC_NO,      KC_NO,    KC_NO,   KC_NO,
     KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,KC_NO
   ),
 };
@@ -116,9 +117,9 @@ void keyboard_post_init_user(void) {
 
 const uint8_t PROGMEM ledmap[][DRIVER_LED_TOTAL][3] = {
     [0] = { {0,0,255}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0} },
-
     [1] = { {0,150,125}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0} },
     [2] = { {255,100,70}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0} },
+    [3] = { {0,255,255}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0} },
 
 };
 
@@ -151,6 +152,9 @@ void rgb_matrix_indicators_user(void) {
     case 2:
       set_layer_color(2);
       break;
+    case 3:
+      set_layer_color(3);
+      break;
    default:
     if (rgb_matrix_get_flags() == LED_FLAG_NONE)
       rgb_matrix_set_color_all(0, 0, 0);
@@ -169,6 +173,20 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         rgblight_mode(2);
       }
       return false;
+    case PIPET:
+      if (record->event.pressed) {
+        if ((mods | oneshot_mods) & MOD_MASK_SHIFT) {  // Is shift held?
+          del_mods(MOD_MASK_SHIFT);  // Temporarily delete shift.
+          del_oneshot_mods(MOD_MASK_SHIFT);
+          SEND_STRING("|");
+          layer_clear();
+          set_mods(mods);            // Restore mods.
+        } else {
+          SEND_STRING("~");
+          layer_clear();
+        }
+        return false;
+      }
     case UNDERDASH:
       if (record->event.pressed) {
         if ((mods | oneshot_mods) & MOD_MASK_SHIFT) {  // Is shift held?
@@ -275,6 +293,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
           SEND_STRING("[]" SS_TAP(X_LEFT));
           layer_clear();
           set_mods(mods);            // Restore mods.
+        } else if ((mods | oneshot_mods) & MOD_MASK_ALT) {  // Is ALT held?
+          del_mods(MOD_MASK_ALT);  // Temporarily delete ALT.
+          del_oneshot_mods(MOD_MASK_ALT);
+          SEND_STRING("{}" SS_TAP(X_LEFT));
+          layer_clear();
+          set_mods(mods);            // Restore mods.
         } else {
           SEND_STRING("()" SS_TAP(X_LEFT));
           layer_clear();
@@ -286,11 +310,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         if ((mods | oneshot_mods) & MOD_MASK_SHIFT) {  // Is shift held?
           del_mods(MOD_MASK_SHIFT);  // Temporarily delete shift.
           del_oneshot_mods(MOD_MASK_SHIFT);
-          SEND_STRING("{}" SS_TAP(X_LEFT));
+          SEND_STRING("`");
           layer_clear();
           set_mods(mods);            // Restore mods.
         } else {
-          SEND_STRING("\"\"" SS_TAP(X_LEFT));
+          SEND_STRING("\'");
           layer_clear();
         }
         return false;
